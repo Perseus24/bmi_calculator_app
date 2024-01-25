@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,10 +21,7 @@ class GenderWidget extends StatelessWidget {
         SizedBox(height: 15,),
         Text(
           gender,
-          style: TextStyle(
-              fontSize: 18,
-              color: Color(0xFF8D8E98)
-          ),
+          style: kLabelTextStyle,
         )
       ],
     );

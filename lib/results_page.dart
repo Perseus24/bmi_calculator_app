@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  ResultsPage({required this.bmiResult, required this.bmiDesc, required this.bmiInter});
 
-  final double bmiResult = 26.7;
+  final String bmiInter;
+  final String bmiDesc;
+  final String bmiResult;
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +38,7 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    'OVERWEIGHT',
-
+                    bmiDesc.toUpperCase(),
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w900,
@@ -45,14 +46,14 @@ class ResultsPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    bmiResult.toString(),
+                      bmiResult,
                     style: TextStyle(
                         fontSize: 70,
                         fontWeight: FontWeight.w900
                     )
                   ),
                   Text(
-                    'You have a higher than normal body weight. Try to exercise more',
+                    bmiInter,
                     textAlign: TextAlign.center,
                     style: kLabelTextStyle,
                   )
